@@ -1,7 +1,12 @@
 # Hinode-up ひので字変換エンジン
 
-以下の2つから構成されるひので字変換エンジン
+![Hinode-up　ひので字変換エンジン](bar.png)
+
+[Firefoxブラウザにインストールするにはここをクリック！](https://github.com/kemoshumai/hinode-up/releases/latest/download/c134cdeb98c14184bc2e-1.0.xpi)
+
 ウェブサイトをひので字で読めるようになります。
+
+以下の2つから構成されるひので字変換エンジン
 
 1. 日本語を**ひので字の書き方に直す**
     - wasmにビルド可能
