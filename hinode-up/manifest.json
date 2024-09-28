@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "hinode-up",
+    "version": "1.0",
+    "description": "ウェブサイトをひので字で表示できるようになります。表示にはひので字用フォント『NKC02 Hinodeji』のインストールが別途必要です。",
+    "icons": {
+        "48": "icon.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon.png",
+            "48": "icon.png"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "scripts": ["pkg/hinode_up.js","background.js"]
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "hinode-up@kemoshumai.com"
+        }
+    }
+
+}
