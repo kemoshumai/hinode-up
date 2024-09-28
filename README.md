@@ -1,6 +1,7 @@
 # Hinode-up ひので字変換エンジン
 
 以下の2つから構成されるひので字変換エンジン
+ウェブサイトをひので字で読めるようになります。
 
 1. 日本語を**ひので字の書き方に直す**
     - wasmにビルド可能
@@ -24,17 +25,21 @@
 
 ## Installation
 
+1. Firefoxブラウザにインストールする
+
+    - [Firefoxブラウザにインストールするにはここをクリック](https://github.com/kemoshumai/hinode-up/releases/latest/download/c134cdeb98c14184bc2e-1.0.xpi)
+
 1. 拡張機能をビルドしたい場合は`cargo run`する。
 ```shell
 cargo run 
 ```
 
-2. 単にひので字変換エンジンを試したい場合は`examples/tokenize.rs`を参照する。
+1. 単にひので字変換エンジンを試したい場合は`examples/tokenize.rs`を参照する。
 ```shell
 cargo run --example tokenize
 ```
 
-3. Rustから利用したい場合は`examples/tokenize.rs`を参考にする。
+1. Rustから利用したい場合は`examples/tokenize.rs`を参考にする。
 ```Rust
 use hinode_up::{sanitize, to_hinode};
 ```
