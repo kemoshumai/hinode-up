@@ -12,3 +12,4 @@ csv = "1.3.0"
 ruzstd = "0.7.1"
 vibrato = "0.5.1"
 wasm-bindgen = "0.2.93"
+getrandom = { version = "0.2", features = ["js"] }
