@@ -12,6 +12,9 @@ const main = async () => {
     toggle_translation.checked = is_translation_enabled.is_translation_enabled;
     toggle_font.checked = is_font_override_enabled.is_font_override_enabled;
 
+    // Hinode-up のデフォルト状態をオンにする
+    await browser.storage.local.set({ is_hinode_up_enabled: true });
+
     toggle_hinode_up.addEventListener('change', async () => {
         await browser.storage.local.set({ is_hinode_up_enabled: toggle_hinode_up.checked });
         reload();

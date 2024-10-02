@@ -61,9 +61,6 @@ const main = async () => {
     // 設定を取得
     const { is_hinode_up_enabled, is_translation_enabled, is_font_override_enabled } = await browser.storage.local.get();
 
-    // Hinode-up のデフォルト状態をオンにする
-    await browser.storage.local.set({ is_hinode_up_enabled: true });
-
     // hinode up が有効化されている場合のみ翻訳・変更を行う
     if (is_hinode_up_enabled){
         // 翻訳が有効化されていたら翻訳する
