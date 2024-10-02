@@ -57,28 +57,29 @@ const overrideFont = async () => {
     document.head.appendChild(style);
 }
 
-
 const main = async () => {
-
     // 設定を取得
-    const { is_translation_enabled, is_font_override_enabled } = await browser.storage.local.get();
+    const { is_hinode_up_enabled, is_translation_enabled, is_font_override_enabled } = await browser.storage.local.get();
 
-    // 翻訳が有効化されていたら翻訳する
-    if (is_translation_enabled){
-        await new Promise((resolve) => {
-            const interval = setInterval(async () => {
-                if (await getIsReady()){
-                    clearInterval(interval);
-                    resolve();
-                }
-            }, 100);
-        });
-        translatePage();
-    }
-
-    // フォント変更が有効化されていたらフォントを変更する
-    if (is_font_override_enabled){
-        overrideFont();
+    // hinode up が有効化されている場合のみ翻訳・変更を行う
+    if (is_hinode_up_enabled){
+        // 翻訳が有効化されていたら翻訳する
+        if (is_translation_enabled){
+            await new Promise((resolve) => {
+                const interval = setInterval(async () => {
+                    if (await getIsReady()){
+                        clearInterval(interval);
+                        resolve();
+                    }
+                }, 100);
+            });
+            translatePage();
+        }
+        
+        // フォント変更が有効化されていたらフォントを変更する
+        if (is_font_override_enabled){
+            overrideFont();
+        }
     }
 
     // 設定が変更されたらページをリロードする
@@ -86,16 +87,19 @@ const main = async () => {
         if (message.message === 'tab_activated') {
             console.log('tab_activated');
             const storage = await browser.storage.local.get();
+            const is_hinode_up_enabled_before = is_hinode_up_enabled;
             const is_translation_enabled_before = is_translation_enabled;
             const is_font_override_enabled_before = is_font_override_enabled;
+            const is_hinode_up_enabled_after = storage.is_hinode_up_enabled;
             const is_translation_enabled_after = storage.is_translation_enabled;
             const is_font_override_enabled_after = storage.is_font_override_enabled;
-            if (is_translation_enabled_before !== is_translation_enabled_after || is_font_override_enabled_before !== is_font_override_enabled_after){
+            if (is_translation_enabled_before !== is_translation_enabled_after ||
+                is_font_override_enabled_before !== is_font_override_enabled_after ||
+                is_hinode_up_enabled_before !== is_hinode_up_enabled_after){
                 location.reload();
             }
         }
     });
-
 }
 
 main();
