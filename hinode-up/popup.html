@@ -10,8 +10,11 @@
             padding: 10px;
         }
 
-        button {
-            width: 100%;
+        .checkbox_parent {
+            padding: 0px;
+        }
+
+        .checkbox_child {
             padding: 10px;
         }
     </style>
@@ -19,10 +22,13 @@
 
 <body>
     <h1>Hinode up</h1>
-    <label>
+    <label class="checkbox_parent">
+        <input type="checkbox" id="toggle-hinode-up" checked> Hinode-up を有効にする
+    </label><br>
+    <label class="checkbox_child">
         <input type="checkbox" id="toggle-translation"> 翻訳を有効にする
     </label><br>
-    <label>
+    <label class="checkbox_child">
         <input type="checkbox" id="toggle-font"> フォントをひので字に書き換える
     </label>
     <p id="log"></p>
