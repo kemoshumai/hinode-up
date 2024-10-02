@@ -87,11 +87,15 @@ const main = async () => {
         if (message.message === 'tab_activated') {
             console.log('tab_activated');
             const storage = await browser.storage.local.get();
+            const is_hinode_up_enabled_before = is_hinode_up_enabled;
             const is_translation_enabled_before = is_translation_enabled;
             const is_font_override_enabled_before = is_font_override_enabled;
+            const is_hinode_up_enabled_after = storage.is_hinode_up_enabled;
             const is_translation_enabled_after = storage.is_translation_enabled;
             const is_font_override_enabled_after = storage.is_font_override_enabled;
-            if (is_translation_enabled_before !== is_translation_enabled_after || is_font_override_enabled_before !== is_font_override_enabled_after){
+            if (is_translation_enabled_before !== is_translation_enabled_after ||
+                is_font_override_enabled_before !== is_font_override_enabled_after ||
+                is_hinode_up_enabled_before !== is_hinode_up_enabled_after){
                 location.reload();
             }
         }
