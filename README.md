@@ -2,7 +2,7 @@
 
 ![Hinode-up　ひので字変換エンジン](bar.png)
 
-[Firefoxブラウザにインストールするにはここをクリック！](https://github.com/kemoshumai/hinode-up/releases/latest/download/c134cdeb98c14184bc2e-1.0.xpi)
+[Firefoxブラウザにインストールするにはここをクリック！](https://github.com/kemoshumai/hinode-up/releases/latest/download/c134cdeb98c14184bc2e-1.2.xpi)
 
 ウェブサイトをひので字で読めるようになります。
 
@@ -32,7 +32,7 @@
 
 1. Firefoxブラウザにインストールする
 
-    - [Firefoxブラウザにインストールするにはここをクリック](https://github.com/kemoshumai/hinode-up/releases/latest/download/c134cdeb98c14184bc2e-1.0.xpi)
+    - [Firefoxブラウザにインストールするにはここをクリック](https://github.com/kemoshumai/hinode-up/releases/latest/download/c134cdeb98c14184bc2e-1.2.xpi)
 
 1. 拡張機能をビルドしたい場合は`cargo run`する。
 ```shell

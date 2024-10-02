@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "hinode-up",
-    "version": "1.0",
+    "version": "1.2",
     "description": "ウェブサイトをひので字で表示できるようになります。表示にはひので字用フォント『NKC02 Hinodeji』のインストールが別途必要です。",
     "icons": {
         "48": "icon.png"
