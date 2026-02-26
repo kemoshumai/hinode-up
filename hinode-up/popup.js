@@ -40,4 +40,4 @@ document.addEventListener('DOMContentLoaded', function () {
     main();
 });
 
-print("Popup script running");
+console.log("Popup script running");
